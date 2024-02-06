@@ -1,5 +1,4 @@
 import { Card } from "@/components/Card";
-import { Person } from "@/components/Person";
 
 function Page() {
   return (
