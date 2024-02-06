@@ -1,4 +1,4 @@
-import { GeoForms } from "@/components/GeoForms";
+import { Person } from "@/components/Person";
 
 function Page() {
   return (
@@ -6,7 +6,7 @@ function Page() {
       <h1 className="font-bold text-2xl">Hello, World!</h1>
       <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
 
-      <GeoForms />
+      <Person />
     </div>
   );
 }
