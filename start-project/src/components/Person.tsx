@@ -1,16 +1,26 @@
+const getWeekday = (today: Date) => {
+  return new Intl.DateTimeFormat("en", { weekday: "long" }).format(today);
+};
+
 export const Person = () => {
+  const data = {
+    name: "Nyan Cat",
+    avatar:
+      "https://media.discordapp.net/attachments/1184173326537588806/1204427270639452230/Collection11-20.gif?ex=65d4b14e&is=65c23c4e&hm=cd8bb8e65341330c50201d711d38f73ad0a011b1c2a292e5fd7a2fe49dd5a734&=",
+    misc: ["@NyanCat", "https://www.nyan.cat"],
+  };
+
+  const today: Date = new Date();
+
   return (
     <>
-      <h1>Nyan Cat</h1>
-      <img
-        src="https://media.discordapp.net/attachments/1184173326537588806/1204423128667660288/tumblr_mjphnqLpNy1s5jjtzo1_400.gif?ex=65d4ad72&is=65c23872&hm=5f381976f6bb5a77b18025f31dba11d85703678a79af719e0e13dfc36f1b6339&="
-        alt="Nyan Cat One"
-        className="w-40"
-      />
+      <h1>
+        {data.name} - {getWeekday(today)}
+      </h1>
+      <img src={data.avatar} alt={data.name} className="w-60" />
       <ul>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Twitter: {data.misc[0]}</li>
+        <li>Website: {data.misc[1]}</li>
       </ul>
     </>
   );
