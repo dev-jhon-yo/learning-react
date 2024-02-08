@@ -1,25 +1,24 @@
-import { peopleList } from "@/data/peopleList";
-
 function Page() {
-  const developer = peopleList.filter(
-    (person) => person.profession === "developer"
-  );
+  const fullTime = new Intl.DateTimeFormat("en", {
+    timeStyle: "short",
+    hour12: false,
+  }).format();
+
+  const hour = new Date().getHours();
+  let greeting = "";
+
+  if (hour >= 0 && hour < 12) {
+    greeting = "Good morning 😄";
+  } else if (hour >= 12 && hour < 18) {
+    greeting = "Good afternoon 😎";
+  } else if (hour >= 18 && hour <= 23) {
+    greeting = "Good evening 😴";
+  }
 
   return (
-    <div>
-      <h1 className="font-bold text-2xl">Hello, World!</h1>
-      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-
-      {developer.length > 0 && (
-        <>
-          <h3>DEVELOPER LIST FILTER</h3>
-          <ul>
-            {developer.map((person) => (
-              <li key={person.id}>{person.name}</li>
-            ))}
-          </ul>
-        </>
-      )}
+    <div className="w-screen h-screen flex flex-col justify-center items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
+      <div className="text-9xl">{fullTime}</div>
+      <div className="text-5xl font-bold">{greeting}</div>
     </div>
   );
 }
