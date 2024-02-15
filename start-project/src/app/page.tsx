@@ -1,11 +1,18 @@
-import { StudentTable } from "@/components/StudentTable";
-import { students } from "@/data/students";
+"use client";
 
 function Page() {
+  const handleButtonClick = () => {
+    alert("Button Click Event");
+  };
+
   return (
-    <div className="container mx-auto ">
-      <h1 className="text-5xl mb-5 font-bold uppercase">Student List</h1>
-      <StudentTable students={students} />
+    <div className="w-screen h-screen flex justify-center items-center">
+      <button
+        onClick={handleButtonClick}
+        className="p-3 bg-blue-700 text-white rounded-md"
+      >
+        Click Here
+      </button>
     </div>
   );
 }
